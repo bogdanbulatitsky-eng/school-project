@@ -70,7 +70,7 @@ def main() -> None:
         # Спочатку записуємо тимчасовий файл, потім замінюємо основну базу.
         temporary = FILE.with_suffix(".tmp")
         try:
-            updated.to_csv(temporary, index=False, encoding="utf-8")
+            updated.to_csv(temporary, index=False, encoding="utf-8-sig")
             temporary.replace(FILE)
         except OSError as error:
             st.error(f"Не вдалося зберегти зміни: {error}")
